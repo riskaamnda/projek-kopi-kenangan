@@ -68,8 +68,8 @@ body {
     transition: 0.2s linear;
 }
 
-.navbar .navbar-nav a:hover::after {
-    transform: scaleX();
+.navbar .navbar-nav a:hover ::after {
+    transform: scaleX0();
 }
 
 .navbar .navbar-extra a {
@@ -187,7 +187,7 @@ body {
 
 .about h2,
 .menu h2,
-.products,
+.products h2,
 .contact h2 {
     text-align: center;
     font-size: 2.6rem;
@@ -237,7 +237,8 @@ body {
 }
 
 .menu p,
-.contact p {
+.contact p,
+.products p {
     text-align: center;
     max-width: 30rem;
     margin: auto;
@@ -259,11 +260,81 @@ body {
 
 .menu .row .menu-card img {
     border-radius: 50%;
-    width: 80;
+    width: 80%;
 }
 
 .menu .row .menu-card .menu-card-title {
     margin: 1rem auto 0.5rem;
+}
+
+/* Products Section */
+.products .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.products .product-card {
+    text-align: center;
+    border: 1px solid #666;
+    padding: 2rem;
+}
+
+.products .product-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.products .product-icons a {
+    width: 4rem;
+    height: 4rem;
+    color: #fff;
+    margin: 0.3rem;
+    border: 1px solid #666;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products .product-icons a:hover {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.products .product-image {
+    padding: 1rem 0;
+}
+
+.products .product-image image {
+    height: 25rem;
+}
+
+.products .product-content h3 {
+    font-size: 2rem;
+}
+
+.products .product-star {
+    font-size: 1.7rem;
+    padding: 0.8rem;
+    color: var(--primary);
+}
+
+.products .product-stars .star-full {
+    fill: var(--primary);
+}
+
+.products .product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.products .product-price span {
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1rem;
 }
 
 /* Contact Section */
@@ -285,7 +356,7 @@ body {
     text-align: center;
 }
 
-.contact .row form .input-grup {
+.contact .row form .input-group {
     display: flex;
     align-items: center;
     margin-top: 2rem;
@@ -294,7 +365,7 @@ body {
     padding-left: 2rem;
 }
 
-.contact .row form .input-grup input {
+.contact .row form .input-group input {
     width: 100%;
     padding: 2rem;
     font-size: 1.7rem;
@@ -353,6 +424,7 @@ footer .credit a {
 }
 
 /* Media Queries */
+
 /* Laptop */
 @media (max-width: 1366px) {
     html {
@@ -360,7 +432,7 @@ footer .credit a {
     }
 }
 
-*/ Table */
+/* Table */
 @media (max-width: 768px) {
     html {
         font-size: 62.5%;
@@ -371,7 +443,7 @@ footer .credit a {
     .navbar .navbar-nav {
         position: absolute;
         top: 100%;
-        right: -100;
+        right: -100%;
         background-color: #fff;
         width: 30rem;
         height: 100vh;
